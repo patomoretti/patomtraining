@@ -1,0 +1,333 @@
+@use "commons" as c;
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Bebas Neue', cursive;
+}
+
+body {
+    background-color: rgb(255, 255, 255) !important;
+}
+
+//MIXINS
+@mixin ancho-pagina {
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 8%;
+}
+
+@mixin sub-paginas {
+    border-width: 1px;
+    border-top-style: solid;
+    width: 90%;
+    margin-bottom: 5%;
+    padding-left: 5%;
+    padding-top: 2%;
+}
+
+@mixin titulo-pagina {
+    display: flex;
+    margin-top: 7%;
+    background-color: c.$coloramarillo;
+    padding-left: 2%;
+    padding-top: 1%;
+}
+
+@mixin box-style-dif{
+    border-radius: 5px;
+    border-color: black;
+
+    .titulodifentre{
+        display: flex;
+        margin-top: 5%;
+        margin-left: 10%;
+    }
+
+    .textodifentre{
+        display: flex;
+        margin-top:2%;
+    }
+}
+
+
+
+//PAGINA EN GENERAL
+#menu {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+
+        "logo navbar"
+        "logo navbar"
+    ;
+
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: black;
+    border-bottom-style: solid;
+    border-width: 3px;
+    border-color: c.$coloramarillo;
+
+
+    .logo {
+        grid-area: logo;
+        margin-left: 5%;
+    }
+
+    .navbar {
+        grid-area: navbar;
+        flex-direction: row;
+        margin-left: 20%;
+    }
+
+    .nav-item {
+        margin-right: 8%;
+    }
+
+    .posicionamiento {
+        display: flex;
+        justify-content: center;
+        font-size: larger;
+        text-align: center;
+    }
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 768px) {}
+
+
+//INDEX//
+@media screen and (min-width: 768px) {
+
+    #pagprincipal {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        grid-template-areas:
+
+            "sobremi"
+        ;
+
+        @include ancho-pagina;
+
+        .fondo{
+            display: flex;
+            background-size: cover;
+        }
+        #sobremi {
+
+            grid-area: sobremi;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
+            margin-top: 20%;
+            margin-bottom: 10%;
+
+            .titulomi {
+                @include sub-paginas;
+                display: flex;
+            }
+
+            .fototexto {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                .fotomi {
+                    padding-left: 15%;
+                }
+
+                .textomi {
+                    padding-right: 15%;
+                }
+            }
+
+        }
+    }
+
+}
+
+//SERVICIOS
+#servicios{
+    @include ancho-pagina;
+
+    .tituloservicios{
+        @include titulo-pagina;
+    }
+
+    .subservicios{
+        display:grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        
+        "servi1"
+        "servi2"
+        "servi3"
+        "servi4"
+        "servi5"
+        
+        ;
+
+        .difservicios{
+            grid-area: servi1;
+            display: flex;
+            flex-direction: row;
+            padding-left: 10%;
+            padding-right: 10%;
+
+            .titulotexto{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding-left: 10%;
+                padding-right: 10%;
+            }
+        }
+
+        .difservicios:nth-child(2){
+            grid-area: servi2;
+            flex-direction: row-reverse;
+            padding-right: 10%;
+        }
+
+        .difservicios:nth-child(3){
+            grid-area: servi3;
+        }
+
+        .difservicios:nth-child(4){
+            grid-area: servi4;
+            flex-direction: row-reverse;
+        }
+
+        .difservicios:nth-child(5){
+            grid-area: servi5;
+            padding-top: 5%;
+        }
+    }
+}
+
+
+//PLANES
+#entrenamientos{
+
+    @include ancho-pagina;
+
+    .tituloentre{
+        grid-area: tituloentre;
+        @include titulo-pagina;
+    }
+
+    .subentre{
+        display: grid;
+        grid-template-columns: repeat(4,25%);
+        grid-template-rows: auto;
+        grid-template-areas:
+
+            "difentre1 difentre2 difentre3 difentre4"
+            "difentre5 difentre6 difentre7 difentre8"
+
+
+        ;
+
+        margin-top: 3%;
+
+
+        .difentre{
+            grid-area: difentre1;
+            @include box-style-dif;
+            padding-bottom: 15%;
+            text-align: center;
+        }
+
+        .difentre:nth-child(2){
+            grid-area: difentre2;
+        }
+
+        .difentre:nth-child(3){
+            grid-area: difentre3;
+        }
+
+        .difentre:nth-child(4){
+            grid-area: difentre4;
+        }
+
+        .difentre:nth-child(5){
+            grid-area: difentre5;
+        }
+
+        .difentre:nth-child(6){
+            grid-area: difentre6;
+        }
+
+        .difentre:nth-child(7){
+            grid-area: difentre7;
+        }
+
+        .difentre:nth-child(8){
+            grid-area: difentre8;
+        }
+
+        .difentre:hover {
+            transform: scale(1.1, 1.1);
+            transition: 0.3s;
+        }
+    }
+}
+
+
+//CONTACTO//
+#contacto {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-template-areas:
+
+        "titulo titulo"
+        "formulario mired"
+
+    ;
+
+    @include ancho-pagina;
+
+    .titulocontacto {
+        grid-area:titulo;
+        @include titulo-pagina;
+    }
+
+    .formulario {
+        grid-area: formulario;
+        display: flex;
+        margin-top: 5%;
+        margin-left: 3%;
+    }
+
+    .mired {
+        grid-area: mired;
+        display: flex;
+        flex-direction: column;
+        margin-top: 5%;
+
+        .difredes {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            padding-bottom: 2%;
+        }
+
+        .difredes:nth-child(2) {
+            display: flex;
+        }
+
+        .difredes:nth-child(3) {
+            display: flex;
+        }
+
+    }
+
+}
+

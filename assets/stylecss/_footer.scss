@@ -1,0 +1,26 @@
+@use "commons" as c;
+
+footer{
+    background-color: black;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    border-top-style: solid;
+    border-width: 3px;
+    border-color: c.$coloramarillo;
+    color: white;
+
+    p{
+        display: flex;
+        justify-content: center;
+        
+    }
+    
+    .infoextra{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        padding-top:5%;
+    }
+}
+

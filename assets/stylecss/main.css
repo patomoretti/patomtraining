@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Bebas Neue", cursive;
+}
+
+body {
+  background-color: rgb(255, 255, 255) !important;
+}
+
+#menu {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+  grid-template-areas: "logo navbar" "logo navbar";
+  padding-top: 1%;
+  padding-bottom: 1%;
+  background-color: black;
+  border-bottom-style: solid;
+  border-width: 3px;
+  border-color: rgb(255, 255, 0);
+}
+#menu .logo {
+  grid-area: logo;
+  margin-left: 5%;
+}
+#menu .navbar {
+  grid-area: navbar;
+  flex-direction: row;
+  margin-left: 20%;
+}
+#menu .nav-item {
+  margin-right: 8%;
+}
+#menu .posicionamiento {
+  display: flex;
+  justify-content: center;
+  font-size: larger;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  #pagprincipal {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas: "sobremi";
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 8%;
+  }
+  #pagprincipal .fondo {
+    display: flex;
+    background-size: cover;
+  }
+  #pagprincipal #sobremi {
+    grid-area: sobremi;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 20%;
+    margin-bottom: 10%;
+  }
+  #pagprincipal #sobremi .titulomi {
+    border-width: 1px;
+    border-top-style: solid;
+    width: 90%;
+    margin-bottom: 5%;
+    padding-left: 5%;
+    padding-top: 2%;
+    display: flex;
+  }
+  #pagprincipal #sobremi .fototexto {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  #pagprincipal #sobremi .fototexto .fotomi {
+    padding-left: 15%;
+  }
+  #pagprincipal #sobremi .fototexto .textomi {
+    padding-right: 15%;
+  }
+}
+#servicios {
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-bottom: 8%;
+}
+#servicios .tituloservicios {
+  display: flex;
+  margin-top: 7%;
+  background-color: rgb(255, 255, 0);
+  padding-left: 2%;
+  padding-top: 1%;
+}
+#servicios .subservicios {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  grid-template-areas: "servi1" "servi2" "servi3" "servi4" "servi5";
+}
+#servicios .subservicios .difservicios {
+  grid-area: servi1;
+  display: flex;
+  flex-direction: row;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+#servicios .subservicios .difservicios .titulotexto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+#servicios .subservicios .difservicios:nth-child(2) {
+  grid-area: servi2;
+  flex-direction: row-reverse;
+  padding-right: 10%;
+}
+#servicios .subservicios .difservicios:nth-child(3) {
+  grid-area: servi3;
+}
+#servicios .subservicios .difservicios:nth-child(4) {
+  grid-area: servi4;
+  flex-direction: row-reverse;
+}
+#servicios .subservicios .difservicios:nth-child(5) {
+  grid-area: servi5;
+  padding-top: 5%;
+}
+
+#entrenamientos {
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-bottom: 8%;
+}
+#entrenamientos .tituloentre {
+  grid-area: tituloentre;
+  display: flex;
+  margin-top: 7%;
+  background-color: rgb(255, 255, 0);
+  padding-left: 2%;
+  padding-top: 1%;
+}
+#entrenamientos .subentre {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: auto;
+  grid-template-areas: "difentre1 difentre2 difentre3 difentre4" "difentre5 difentre6 difentre7 difentre8";
+  margin-top: 3%;
+}
+#entrenamientos .subentre .difentre {
+  grid-area: difentre1;
+  border-radius: 5px;
+  border-color: black;
+  padding-bottom: 15%;
+  text-align: center;
+}
+#entrenamientos .subentre .difentre .titulodifentre {
+  display: flex;
+  margin-top: 5%;
+  margin-left: 10%;
+}
+#entrenamientos .subentre .difentre .textodifentre {
+  display: flex;
+  margin-top: 2%;
+}
+#entrenamientos .subentre .difentre:nth-child(2) {
+  grid-area: difentre2;
+}
+#entrenamientos .subentre .difentre:nth-child(3) {
+  grid-area: difentre3;
+}
+#entrenamientos .subentre .difentre:nth-child(4) {
+  grid-area: difentre4;
+}
+#entrenamientos .subentre .difentre:nth-child(5) {
+  grid-area: difentre5;
+}
+#entrenamientos .subentre .difentre:nth-child(6) {
+  grid-area: difentre6;
+}
+#entrenamientos .subentre .difentre:nth-child(7) {
+  grid-area: difentre7;
+}
+#entrenamientos .subentre .difentre:nth-child(8) {
+  grid-area: difentre8;
+}
+#entrenamientos .subentre .difentre:hover {
+  transform: scale(1.1, 1.1);
+  transition: 0.3s;
+}
+
+#contacto {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+  grid-template-areas: "titulo titulo" "formulario mired";
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-bottom: 8%;
+}
+#contacto .titulocontacto {
+  grid-area: titulo;
+  display: flex;
+  margin-top: 7%;
+  background-color: rgb(255, 255, 0);
+  padding-left: 2%;
+  padding-top: 1%;
+}
+#contacto .formulario {
+  grid-area: formulario;
+  display: flex;
+  margin-top: 5%;
+  margin-left: 3%;
+}
+#contacto .mired {
+  grid-area: mired;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+}
+#contacto .mired .difredes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding-bottom: 2%;
+}
+#contacto .mired .difredes:nth-child(2) {
+  display: flex;
+}
+#contacto .mired .difredes:nth-child(3) {
+  display: flex;
+}
+
+footer {
+  background-color: black;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  border-top-style: solid;
+  border-width: 3px;
+  border-color: rgb(255, 255, 0);
+  color: white;
+}
+footer p {
+  display: flex;
+  justify-content: center;
+}
+footer .infoextra {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding-top: 5%;
+}/*# sourceMappingURL=main.css.map */
